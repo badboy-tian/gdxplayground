@@ -9,3 +9,7 @@
 2.gdx遮罩(gdx mask)(http://www.jianshu.com/p/2378de0214e9)
 
 ![](doc/2.jpg)
+
+3.gdx画山峰(gdx line texture)
+
+![](doc/4.jpeg)
