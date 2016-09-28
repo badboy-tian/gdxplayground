@@ -23,13 +23,9 @@ class MeshLine : BaseScreen() {
 
     private var mPoints: Array<Vector2>? = null;
 
-    private var bIsDragging: Boolean = false
-
     private var bDrawOutlines: Boolean = false
 
     private var bDrawConstruction: Boolean = false
-
-    private var mWindowSize: Vector2 = Vector2.Zero
 
     var shapeRender: ShapeRenderer? = null
 
@@ -46,13 +42,8 @@ class MeshLine : BaseScreen() {
 
         mPoints = Array<Vector2>()
 
-        bIsDragging = false;
-
-
         bDrawOutlines = true;
         bDrawConstruction = true;
-
-        mWindowSize = Vector2(Gdx.graphics.width.toFloat(), Gdx.graphics.height.toFloat())
 
         shapeRender = ShapeRenderer()
 
@@ -124,7 +115,7 @@ class MeshLine : BaseScreen() {
                 mesh!!.dispose()
             }
 
-            for (i in 0..mPoints!!.size - 1) {
+            /*for (i in 0..mPoints!!.size - 1) {
                 var a: Int = if ((i - 1) < 0) 0 else (i - 1)
                 var b: Int = i
                 var c: Int = if ((i + 1) >= mPoints!!.size) mPoints!!.size - 1 else (i + 1)
@@ -132,7 +123,6 @@ class MeshLine : BaseScreen() {
 
                 caculate(mPoints!![a], mPoints!![b], mPoints!![c], mPoints!![d])
             }
-
 
             Gdx.app.log("", "" + vertexSet!!.size)
             var array: ArrayList<TVertexData> = ArrayList(vertexSet);
@@ -178,8 +168,31 @@ class MeshLine : BaseScreen() {
 
             Gdx.app.log("", "" + indexs.size)
 
-            mesh!!.setIndices(indexs.toArray())
+            mesh!!.setIndices(indexs.toArray())*/
 
+            var meshtools = MeshTools()
+            vertextArr = meshtools.convert(mPoints, texture, mThickness)
+            var num = vertextArr!!.size / 4;
+
+            mesh = Mesh(
+                    true,
+                    num,
+                    num,
+                    VertexAttribute(VertexAttributes.Usage.Position, 2, "a_position"),
+                    VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, "a_texCoord0")
+            )
+
+
+            mesh!!.setVertices(vertextArr!!.toArray())
+
+            var indexs: ShortArray = ShortArray()
+            for (i in 0..num - 1) {
+                indexs.add(i.toShort())
+            }
+
+            Gdx.app.log("", "" + indexs.size)
+
+            mesh!!.setIndices(indexs.toArray())
 
             vertexSet!!.clear()
             vertextArr!!.clear()
