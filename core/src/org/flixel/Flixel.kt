@@ -1,7 +1,7 @@
 package org.flixel
 
 import com.badlogic.gdx.Game
-import org.flixel.screens.MashTest01
+import org.flixel.screens.MeshLine
 
 class Flixel : Game() {
 
@@ -9,7 +9,7 @@ class Flixel : Game() {
         //setScreen(new EarserTest());
         //setScreen(new MaskTest());
         //setScreen(MaskHairTest())
-        setScreen(MashTest01())
+        //setScreen(MashTest01())
+        setScreen(MeshLine())
     }
-
 }
