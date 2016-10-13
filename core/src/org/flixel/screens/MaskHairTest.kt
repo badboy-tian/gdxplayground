@@ -30,8 +30,7 @@ class MaskHairTest : BaseScreen() {
     }
 
     override fun initUI() {
-        val pixmap = Pixmap(Gdx.graphics.width.toInt(),
-                Gdx.graphics.height.toInt(), Pixmap.Format.RGBA8888)
+        val pixmap = Pixmap(Gdx.graphics.width.toInt(), Gdx.graphics.height.toInt(), Pixmap.Format.RGBA8888)
         pixmap.setColor(Color.GRAY)
         pixmap.fill()
 
