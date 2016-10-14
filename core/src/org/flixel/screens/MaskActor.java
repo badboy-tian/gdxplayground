@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
+import com.badlogic.gdx.graphics.glutils.FrameBuffer;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.Actor;
@@ -69,7 +70,7 @@ public class MaskActor extends Actor {
         this.tex1 = hair;
         setSize(tex1.getWidth(), tex1.getHeight());
 
-        Pixmap pixmap = new Pixmap((int)(tex1.getWidth() * 1.5f), (int)(tex1.getHeight() * 1.5f), Pixmap.Format.Alpha);
+        Pixmap pixmap = new Pixmap((int) (tex1.getWidth() * 1.5f), (int) (tex1.getHeight() * 1.5f), Pixmap.Format.Alpha);
         pixmap.fill();
 
         tex0 = new Texture(pixmap);
@@ -80,7 +81,7 @@ public class MaskActor extends Actor {
         mask.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
         mask.setWrap(Texture.TextureWrap.Repeat, Texture.TextureWrap.Repeat);
 
-        pixmap.dispose();
+        //pixmap.dispose();
 
         program = new ShaderProgram(Vertex, Fragment);
         if (!program.isCompiled()) {
@@ -102,10 +103,12 @@ public class MaskActor extends Actor {
         initListener();
     }
 
+    boolean isClear = false;
     private Vector2 last = null;
     private boolean leftDown = false;
+
     private void initListener() {
-        addListener(new InputListener(){
+        addListener(new InputListener() {
             @Override
             public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
                 if (button == Input.Buttons.LEFT) {
@@ -127,6 +130,8 @@ public class MaskActor extends Actor {
                     drawblePixmap.draw(curr);
                     last = null;
                     leftDown = false;
+
+                    isClear = !isClear;
                 }
             }
 
@@ -185,7 +190,27 @@ public class MaskActor extends Actor {
         }
 
         private void drawDot(Vector2 spot) {
-            pixmap.fillCircle((int) spot.x, (int) spot.y, (int) brushSize);
+            if (isClear) {
+                eraseCircle((int) spot.x, (int) spot.y, (int) brushSize, pixmap, t);
+            } else {
+                pixmap.fillCircle((int) spot.x, (int) spot.y, (int) brushSize);
+            }
+        }
+
+        public void eraseCircle(int x, int y, int radius, Pixmap pixmap, Texture texture) {
+            if (pixmap != null) {
+                Pixmap.Blending blending = Pixmap.getBlending();
+                pixmap.setColor(0, 0, 0, 0);
+                Pixmap.setBlending(Pixmap.Blending.None);
+
+                pixmap.fillCircle(x, y, radius);
+                Pixmap.setBlending(blending);
+
+                Gdx.gl.glBindTexture(GL20.GL_TEXTURE_2D, texture.getTextureObjectHandle());
+                Gdx.gl.glPixelStorei(GL20.GL_UNPACK_ALIGNMENT, 1);
+                Gdx.gl.glTexImage2D(GL20.GL_TEXTURE_2D, 0, pixmap.getGLInternalFormat(), pixmap.getWidth(), pixmap.getHeight(), 0,
+                        pixmap.getGLFormat(), pixmap.getGLType(), pixmap.getPixels());
+            }
         }
 
         public void draw(Vector2 spot) {

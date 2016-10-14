@@ -1,10 +1,7 @@
 package org.flixel
 
 import com.badlogic.gdx.Game
-import org.flixel.screens.MashTest01
-import org.flixel.screens.MaskHairTest
-import org.flixel.screens.MeshLine
-import org.flixel.screens.StencilMask
+import org.flixel.screens.*
 
 class Flixel : Game() {
 
@@ -15,5 +12,6 @@ class Flixel : Game() {
         //setScreen(MashTest01())
         //setScreen(MeshLine())
         setScreen(StencilMask())
+        //setScreen(PixmapTest())
     }
 }
