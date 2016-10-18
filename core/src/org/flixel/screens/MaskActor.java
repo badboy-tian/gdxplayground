@@ -193,6 +193,7 @@ public class MaskActor extends Actor {
             if (isClear) {
                 eraseCircle((int) spot.x, (int) spot.y, (int) brushSize, pixmap, t);
             } else {
+                pixmap.setColor(drawColor);
                 pixmap.fillCircle((int) spot.x, (int) spot.y, (int) brushSize);
             }
         }
@@ -208,8 +209,11 @@ public class MaskActor extends Actor {
 
                 Gdx.gl.glBindTexture(GL20.GL_TEXTURE_2D, texture.getTextureObjectHandle());
                 Gdx.gl.glPixelStorei(GL20.GL_UNPACK_ALIGNMENT, 1);
-                Gdx.gl.glTexImage2D(GL20.GL_TEXTURE_2D, 0, pixmap.getGLInternalFormat(), pixmap.getWidth(), pixmap.getHeight(), 0,
-                        pixmap.getGLFormat(), pixmap.getGLType(), pixmap.getPixels());
+                Gdx.gl.glTexImage2D(GL20.GL_TEXTURE_2D, 0,
+                        pixmap.getGLInternalFormat(),
+                        pixmap.getWidth(), pixmap.getHeight(), 0,
+                        pixmap.getGLFormat(), pixmap.getGLType(),
+                        pixmap.getPixels());
             }
         }
 

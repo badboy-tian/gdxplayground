@@ -1,0 +1,637 @@
+{
+  "ID": "10438275-0524-4c7c-a4e4-f2068209fdd4",
+  "Version": "3.10.0.0",
+  "Name": "MainScene",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 3,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "BG.jpg",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {},
+            "Position": {
+              "X": 1.0947,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0011,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "LeftMargin": 1.0947,
+            "RightMargin": -1.0947,
+            "BottomMargin": 0.0,
+            "Tag": 5,
+            "ActionTag": -1462589156,
+            "Size": {
+              "X": 960.0,
+              "Y": 640.0
+            },
+            "Name": "bg",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "Button1_65.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "Button1_65.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "Button1_65.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 153,
+            "Scale9Height": 168,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 42.4695,
+              "Y": 593.5437
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0442,
+              "Y": 0.9274
+            },
+            "PreSize": {
+              "X": 0.0698,
+              "Y": 0.1046
+            },
+            "LeftMargin": 8.9845,
+            "RightMargin": 884.0455,
+            "TopMargin": 12.9713,
+            "BottomMargin": 560.0587,
+            "Tag": 7,
+            "ActionTag": -1585657019,
+            "Size": {
+              "X": 66.97,
+              "Y": 66.97
+            },
+            "Name": "music",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Button_46.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 206.0412,
+              "Y": 107.2196
+            },
+            "Scale": {
+              "ScaleX": 0.7039,
+              "ScaleY": 0.7039
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.2146,
+              "Y": 0.1675
+            },
+            "PreSize": {
+              "X": 0.1896,
+              "Y": 0.2984
+            },
+            "LeftMargin": 115.0412,
+            "RightMargin": 662.9588,
+            "TopMargin": 437.2804,
+            "BottomMargin": 11.7196,
+            "Tag": 10,
+            "ActionTag": 1270665947,
+            "Size": {
+              "X": 182.0,
+              "Y": 191.0
+            },
+            "Name": "Button_46_5",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Button_54.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 348.5716,
+              "Y": 107.2195
+            },
+            "Scale": {
+              "ScaleX": 0.7039,
+              "ScaleY": 0.7039
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.3631,
+              "Y": 0.1675
+            },
+            "PreSize": {
+              "X": 0.1896,
+              "Y": 0.2969
+            },
+            "LeftMargin": 257.5716,
+            "RightMargin": 520.4284,
+            "TopMargin": 437.7805,
+            "BottomMargin": 12.2195,
+            "Tag": 11,
+            "ActionTag": -93233617,
+            "Size": {
+              "X": 182.0,
+              "Y": 190.0
+            },
+            "Name": "Button_54_6",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Button_17.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 491.4541,
+              "Y": 107.2195
+            },
+            "Scale": {
+              "ScaleX": 0.7039,
+              "ScaleY": 0.7039
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5119,
+              "Y": 0.1675
+            },
+            "PreSize": {
+              "X": 0.1906,
+              "Y": 0.2969
+            },
+            "LeftMargin": 399.9541,
+            "RightMargin": 377.0459,
+            "TopMargin": 437.7805,
+            "BottomMargin": 12.2195,
+            "Tag": 12,
+            "ActionTag": -1028191875,
+            "Size": {
+              "X": 183.0,
+              "Y": 190.0
+            },
+            "Name": "Button_17_7",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Button1_81.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 634.6884,
+              "Y": 107.2195
+            },
+            "Scale": {
+              "ScaleX": 0.7039,
+              "ScaleY": 0.7039
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.6611,
+              "Y": 0.1675
+            },
+            "PreSize": {
+              "X": 0.1906,
+              "Y": 0.2969
+            },
+            "LeftMargin": 543.1884,
+            "RightMargin": 233.8116,
+            "TopMargin": 437.7805,
+            "BottomMargin": 12.2195,
+            "Tag": 13,
+            "ActionTag": 322526137,
+            "Size": {
+              "X": 183.0,
+              "Y": 190.0
+            },
+            "Name": "Button1_81_8",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Button_29.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 777.5707,
+              "Y": 107.2195
+            },
+            "Scale": {
+              "ScaleX": 0.7039,
+              "ScaleY": 0.7039
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.81,
+              "Y": 0.1675
+            },
+            "PreSize": {
+              "X": 0.1896,
+              "Y": 0.2969
+            },
+            "LeftMargin": 686.5707,
+            "RightMargin": 91.4293,
+            "TopMargin": 437.7805,
+            "BottomMargin": 12.2195,
+            "Tag": 14,
+            "ActionTag": 516751505,
+            "Size": {
+              "X": 182.0,
+              "Y": 190.0
+            },
+            "Name": "Button_29_9",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Button_90.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 917.265,
+              "Y": 593.2209
+            },
+            "Scale": {
+              "ScaleX": 0.3511,
+              "ScaleY": 0.3511
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.9555,
+              "Y": 0.9269
+            },
+            "PreSize": {
+              "X": 0.1896,
+              "Y": 0.2984
+            },
+            "LeftMargin": 826.265,
+            "RightMargin": -48.265,
+            "TopMargin": -48.7209,
+            "BottomMargin": 497.7209,
+            "Tag": 15,
+            "ActionTag": 1963478122,
+            "Size": {
+              "X": 182.0,
+              "Y": 191.0
+            },
+            "Name": "Button_90_10",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Button1_61.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 917.2631,
+              "Y": 517.9147
+            },
+            "Scale": {
+              "ScaleX": 0.3511,
+              "ScaleY": 0.3511
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.9555,
+              "Y": 0.8092
+            },
+            "PreSize": {
+              "X": 0.1896,
+              "Y": 0.2969
+            },
+            "LeftMargin": 826.2631,
+            "RightMargin": -48.2631,
+            "TopMargin": 27.0853,
+            "BottomMargin": 422.9147,
+            "Tag": 16,
+            "ActionTag": -1258602907,
+            "Size": {
+              "X": 182.0,
+              "Y": 190.0
+            },
+            "Name": "Button1_61_11",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Button1_69.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 917.2621,
+              "Y": 445.7831
+            },
+            "Scale": {
+              "ScaleX": 0.3511,
+              "ScaleY": 0.3511
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.9555,
+              "Y": 0.6965
+            },
+            "PreSize": {
+              "X": 0.1896,
+              "Y": 0.2969
+            },
+            "LeftMargin": 826.2621,
+            "RightMargin": -48.2621,
+            "TopMargin": 99.2169,
+            "BottomMargin": 350.7831,
+            "Tag": 17,
+            "ActionTag": 1517407576,
+            "Size": {
+              "X": 182.0,
+              "Y": 190.0
+            },
+            "Name": "Button1_69_12",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "title.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 494.1822,
+              "Y": 477.0928
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5148,
+              "Y": 0.7455
+            },
+            "PreSize": {
+              "X": 0.55,
+              "Y": 0.2344
+            },
+            "LeftMargin": 230.1822,
+            "RightMargin": 201.8178,
+            "TopMargin": 87.9072,
+            "BottomMargin": 402.0928,
+            "Tag": 18,
+            "ActionTag": 1652710619,
+            "Size": {
+              "X": 528.0,
+              "Y": 150.0
+            },
+            "Name": "title_13",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "Button1_73.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "Button1_73.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "Button1_73.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 153,
+            "Scale9Height": 168,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 42.4695,
+              "Y": 518.738
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0442,
+              "Y": 0.8105
+            },
+            "PreSize": {
+              "X": 0.0698,
+              "Y": 0.1046
+            },
+            "LeftMargin": 8.9845,
+            "RightMargin": 884.0455,
+            "TopMargin": 87.777,
+            "BottomMargin": 485.2531,
+            "Tag": 14,
+            "ActionTag": 900642961,
+            "Size": {
+              "X": 66.97,
+              "Y": 66.97
+            },
+            "Name": "Button_1",
+            "ctype": "ButtonObjectData"
+          }
+        ],
+        "Size": {
+          "X": 960.0,
+          "Y": 640.0
+        },
+        "Name": "Scene",
+        "ctype": "SingleNodeObjectData"
+      },
+      "UsedResources": [
+        "BG.jpg",
+        "Button_17.png",
+        "Button_29.png",
+        "Button_46.png",
+        "Button_54.png",
+        "Button_90.png",
+        "Button1_61.png",
+        "Button1_65.png",
+        "Button1_69.png",
+        "Button1_73.png",
+        "Button1_81.png",
+        "title.png"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Scene"
+}

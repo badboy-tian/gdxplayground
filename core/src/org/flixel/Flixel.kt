@@ -11,7 +11,8 @@ class Flixel : Game() {
         //setScreen(MaskHairTest())
         //setScreen(MashTest01())
         //setScreen(MeshLine())
-        setScreen(StencilMask())
+        //setScreen(StencilMask())
         //setScreen(PixmapTest())
+        setScreen(TestCocos())
     }
 }
