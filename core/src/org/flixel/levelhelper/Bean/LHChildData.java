@@ -1,5 +1,7 @@
 package org.flixel.levelhelper.Bean;
 
+import com.badlogic.gdx.math.Vector2;
+
 import java.util.Arrays;
 
 /**
@@ -8,18 +10,18 @@ import java.util.Arrays;
 
 public class LHChildData {
     private int alpha;
-    private String anchor;
+    private Vector2 anchor;
     private String colorOverlay;
-    private String generalPosition;
+    private Vector2 generalPosition;
     private String imageFileName;
     private String name;
     private LHNodePhysicData nodePhysics;
     private String nodeType;
     private String parentUUID;
     private String relativeImagePath;
-    private int rotation;
-    private String scale;
-    private String size;
+    private float rotation;
+    private Vector2 scale;
+    private Vector2 size;
     private String spriteName;
     private String spriteUUID;
     private String[] tags;
@@ -35,12 +37,12 @@ public class LHChildData {
         this.alpha = alpha;
     }
 
-    public String getAnchor() {
-        return anchor;
+    public void setAnchor(Vector2 anchor) {
+        this.anchor = anchor;
     }
 
-    public void setAnchor(String anchor) {
-        this.anchor = anchor;
+    public Vector2 getAnchor() {
+        return anchor;
     }
 
     public String getColorOverlay() {
@@ -51,11 +53,11 @@ public class LHChildData {
         this.colorOverlay = colorOverlay;
     }
 
-    public String getGeneralPosition() {
+    public Vector2 getGeneralPosition() {
         return generalPosition;
     }
 
-    public void setGeneralPosition(String generalPosition) {
+    public void setGeneralPosition(Vector2 generalPosition) {
         this.generalPosition = generalPosition;
     }
 
@@ -107,27 +109,27 @@ public class LHChildData {
         this.relativeImagePath = relativeImagePath;
     }
 
-    public int getRotation() {
+    public float getRotation() {
         return rotation;
     }
 
-    public void setRotation(int rotation) {
+    public void setRotation(float rotation) {
         this.rotation = rotation;
     }
 
-    public String getScale() {
+    public Vector2 getScale() {
         return scale;
     }
 
-    public void setScale(String scale) {
+    public void setScale(Vector2 scale) {
         this.scale = scale;
     }
 
-    public String getSize() {
+    public Vector2 getSize() {
         return size;
     }
 
-    public void setSize(String size) {
+    public void setSize(Vector2 size) {
         this.size = size;
     }
 
