@@ -1,4 +1,4 @@
-package org.flixel.levelhelper.Utilities;
+package org.flixel.levelhelper;
 
 /**
  * Created by tian on 2016/10/18.
