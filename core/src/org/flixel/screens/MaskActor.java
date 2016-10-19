@@ -132,6 +132,8 @@ public class MaskActor extends Actor {
                     leftDown = false;
 
                     isClear = !isClear;
+
+                    clearMask();
                 }
             }
 
@@ -145,6 +147,18 @@ public class MaskActor extends Actor {
                 }
             }
         });
+    }
+
+    public void clearMask(){
+        if (drawblePixmap != null){
+            drawblePixmap.clearMask();
+        }
+    }
+
+    public void fileMask(){
+        if (drawblePixmap != null){
+            drawblePixmap.fillMask();
+        }
     }
 
     @Override
@@ -173,6 +187,17 @@ public class MaskActor extends Actor {
             this.pixmap = new Pixmap(t.getWidth(), t.getHeight(), Pixmap.Format.Alpha);
             pixmap.setColor(drawColor);
             this.dirty = false;
+        }
+
+        private void clearMask(){
+            eraseCircle((int)(pixmap.getWidth() / 2f), (int)(pixmap.getHeight() / 2f), (int)(pixmap.getHeight() / 2f), pixmap, t);
+        }
+
+        private void fillMask(){
+            isClear = true;
+            pixmap.setColor(drawColor);
+            pixmap.fillCircle((int)(pixmap.getWidth() / 2f), (int)(pixmap.getHeight() / 2f), (int)(pixmap.getHeight() / 2f));
+            dirty = true;
         }
 
         public void update() {
