@@ -12,6 +12,7 @@ import net.mwplay.cocostudio.ui.CocoStudioUIEditor;
 public class TestCocos extends BaseScreen{
     @Override
     public void initData() {
+
     }
 
     @Override
@@ -20,6 +21,7 @@ public class TestCocos extends BaseScreen{
                 null, null, null, null);
         Group group = studio.createGroup();
         getStage().addActor(group);
+
     }
 
     @Override

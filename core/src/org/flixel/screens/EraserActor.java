@@ -6,7 +6,6 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
-import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
@@ -17,115 +16,33 @@ import com.badlogic.gdx.utils.Disposable;
  * Created by tian on 2016/10/10.
  */
 
-
-/**
- * Created by tian on 2016/10/10.
- */
-
-public class MaskActor extends Image {
-    private final String Vertex = "uniform mat4 u_projTrans;\n" +
-            "\n" +
-            "attribute vec2 a_position;\n" +
-            "attribute vec2 a_texCoord0;\n" +
-            "attribute vec4 a_color;\n" +
-            "\n" +
-            "varying vec4 v_color;\n" +
-            "varying vec2 v_texCoords;\n" +
-            " \n" +
-            "void main() {\n" +
-            "\tv_color = a_color;\n" +
-            "\tv_texCoords = a_texCoord0;\n" +
-            "\tgl_Position = u_projTrans * vec4(a_position, 0.0, 1.0);\n" +
-            "}";
-
-    private final String Fragment = "varying vec4 v_color;\n" +
-            "varying vec2 v_texCoords;\n" +
-            "\n" +
-            "\n" +
-            "uniform sampler2D u_texture;\n" +
-            "uniform sampler2D u_texture1; \n" +
-            "uniform sampler2D u_mask;\n" +
-            "\n" +
-            "void main(void) {\n" +
-            "\tvec4 texColor0 = texture2D(u_texture, v_texCoords);\n" +
-            "\tvec4 texColor1 = texture2D(u_texture1, v_texCoords);\n" +
-            "\n" +
-            "\tfloat mask = texture2D(u_mask, v_texCoords).a;\n" +
-            "\n" +
-            "\tgl_FragColor = v_color * mix(texColor0, texColor1, mask);\n" +
-            "}";
-
-    //our grass texture
-    private Texture tex0;
-
-    //our dirt texture
-    private Texture tex1;
-
+public class EraserActor extends Image {
     //our mask texture
     private Texture mask;
 
-    //our program
-    private ShaderProgram program;
-
     private DrawablePixmap drawblePixmap;
-    private boolean isClear = false;
+    //private boolean isClear = false;
     private float scale = 1;
 
-    public MaskActor(Texture hair, float scale) {
+    public EraserActor(Texture hair, float scale) {
         this.scale = scale;
-        this.tex1 = hair;
-        setSize(tex1.getWidth(), tex1.getHeight());
 
-        Pixmap pixmap = new Pixmap((int) (tex1.getWidth() * scale), (int) (tex1.getHeight() * scale), Pixmap.Format.Alpha);
-        pixmap.fill();
-
-        tex0 = new Texture(pixmap);
-        tex0.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
-        tex0.setWrap(Texture.TextureWrap.Repeat, Texture.TextureWrap.Repeat);
-
-        mask = new Texture(pixmap);
+        mask = hair;
         mask.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
         mask.setWrap(Texture.TextureWrap.Repeat, Texture.TextureWrap.Repeat);
 
-        pixmap.dispose();
-
-        program = new ShaderProgram(Vertex, Fragment);
-        if (!program.isCompiled()) {
-            System.out.println(program.getLog());
-        }
-
-        program.begin();
-        program.setUniformi("u_texture1", 1);
-        program.setUniformi("u_mask", 2);
-        program.end();
-
-        tex1.bind(1);
-        mask.bind(2);
-
-        Gdx.gl.glActiveTexture(GL20.GL_TEXTURE0);
+        setSize(hair.getWidth(), hair.getHeight());
 
         drawblePixmap = new DrawablePixmap(mask);
 
         initListener();
     }
 
-    @Override
-    public void draw(Batch batch, float parentAlpha) {
-        super.draw(batch, parentAlpha);
-
-        drawblePixmap.update();
-
-        ShaderProgram tmp = batch.getShader();
-        batch.setShader(program);
-        batch.draw(tex0, getX(), getY(), getWidth(), getHeight());
-        batch.setShader(tmp);
-    }
-
     public void setClear(boolean isClear) {
-        this.isClear = isClear;
+        //this.isClear = isClear;
     }
 
-    private Vector2 last = Vector2.Zero;
+    private Vector2 last = null;
 
     private void initListener() {
         addListener(new InputListener() {
@@ -180,14 +97,22 @@ public class MaskActor extends Image {
         last = null;
     }
 
-    public void clearMask(){
-        if (drawblePixmap != null){
+    @Override
+    public void draw(Batch batch, float parentAlpha) {
+        super.draw(batch, parentAlpha);
+        drawblePixmap.update();
+
+        batch.draw(mask, getX(), getY(), getWidth(), getHeight());
+    }
+
+    public void clearMask() {
+        if (drawblePixmap != null) {
             drawblePixmap.clearMask();
         }
     }
 
-    public void fileMask(){
-        if (drawblePixmap != null){
+    public void fileMask() {
+        if (drawblePixmap != null) {
             drawblePixmap.fillMask();
         }
     }
@@ -203,14 +128,18 @@ public class MaskActor extends Image {
 
         public DrawablePixmap(Texture texture) {
             this.texture = texture;
-            this.pixmap = new Pixmap(texture.getWidth(), texture.getHeight(), Pixmap.Format.Alpha);
+            texture.getTextureData().prepare();
+            this.pixmap = texture.getTextureData().consumePixmap();//new Pixmap(texture.getWidth(), texture
+            // .getHeight(), Pixmap
+            // .Format
+                    //.RGBA8888);
             pixmap.setColor(drawColor);
             this.dirty = false;
         }
 
         public void update() {
             if (dirty) {
-                texture.draw(pixmap, 0, 0);
+                //texture.draw(pixmap, 0, 0);
                 dirty = false;
             }
         }
@@ -239,28 +168,23 @@ public class MaskActor extends Image {
         }
 
         private void drawDot(Vector2 spot) {
-            if (isClear) {
-                eraseCircle((int) spot.x, (int) spot.y, (int) brushSize, pixmap, texture);
-            } else {
-                pixmap.setColor(drawColor);
-                pixmap.fillCircle((int) spot.x, (int) spot.y, (int) brushSize);
-            }
+            eraseCircle((int) spot.x, (int) spot.y, (int) brushSize, pixmap, texture);
         }
 
-        private void clearMask(){
-            eraseCircle((int)(pixmap.getWidth() / 2f), (int)(pixmap.getHeight() / 2f), (int)(pixmap.getHeight() / 2f), pixmap, texture);
+        private void clearMask() {
+            eraseCircle((int) (pixmap.getWidth() / 2f), (int) (pixmap.getHeight() / 2f), (int) (pixmap.getHeight() / 2f), pixmap, texture);
         }
 
-        private void fillMask(){
-            isClear = true;
+        private void fillMask() {
+            //isClear = true;
             pixmap.setColor(drawColor);
-            pixmap.fillCircle((int)(pixmap.getWidth() / 2f), (int)(pixmap.getHeight() / 2f), (int)(pixmap.getHeight() / 2f));
+            pixmap.fillCircle((int) (pixmap.getWidth() / 2f), (int) (pixmap.getHeight() / 2f), (int) (pixmap.getHeight() / 2f));
             dirty = true;
         }
 
         public void draw(Vector2 spot) {
             drawDot(spot);
-            //dirty = true;
+            dirty = true;
         }
 
         public void drawLerped(Vector2 from, Vector2 to) {

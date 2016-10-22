@@ -4,6 +4,8 @@ import com.badlogic.gdx.Game
 import com.badlogic.gdx.Gdx
 import org.flixel.levelhelper.Utilities.LHUtils
 import org.flixel.screens.LHTest
+import org.flixel.screens.StencilMask
+import org.flixel.stagebuilder.SBuilder
 
 class Flixel : Game() {
 
@@ -13,10 +15,11 @@ class Flixel : Game() {
         //setScreen(MaskHairTest())
         //setScreen(MashTest01())
         //setScreen(MeshLine())
-        //setScreen(StencilMask())
+        setScreen(StencilMask())
         //setScreen(PixmapTest())
         //setScreen(TestCocos())
-        setScreen(LHTest())
+        //setScreen(LHTest())
+        //setScreen(SBuilder())
 
         /*Gdx.app.log("", LHUtils.filenameExtension("Assets/image.png"))
         Gdx.app.log("", LHUtils.stripExtension("Assets/image.png"))

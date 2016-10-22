@@ -5,11 +5,9 @@ buildscript {
         mavenCentral()
         maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
         jcenter()
-       // maven { url "https://mini2dx.org/maven/content/repositories/thirdparty/" }
-       // maven { url "https://mini2dx.org/maven/content/repositories/releases/" }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.1'
+        classpath 'com.android.tools.build:gradle:2.2.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
@@ -27,7 +25,6 @@ allprojects {
         box2DLightsVersion = '1.4'
         ashleyVersion = '1.7.0'
         aiVersion = '1.8.0'
-        miniscriptVersion = '1.0.0-beta1'
     }
 
     repositories {
@@ -35,6 +32,7 @@ allprojects {
         mavenCentral()
         maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
         maven { url "https://oss.sonatype.org/content/repositories/releases/" }
+        maven { url "https://jitpack.io" }
     }
 }
 
@@ -95,6 +93,7 @@ project(":core") {
         compile "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
         compile 'com.googlecode.plist:dd-plist:1.16'
         compile "net.mwplay:cocos-libgdx-ui:0.1.1-SNAPSHOT"
+        compile 'com.github.peakgames.libgdx-stagebuilder:stagebuilder:v3.17.2'
     }
 }
 
