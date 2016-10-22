@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.Color
 import com.badlogic.gdx.graphics.GL20
 import com.badlogic.gdx.graphics.Pixmap
 import com.badlogic.gdx.graphics.Texture
+import com.badlogic.gdx.graphics.g2d.BitmapFont
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 
 /**
@@ -16,9 +17,10 @@ class MaskTest : BaseScreen() {
     private var bg: Texture? = null
     private var img: Texture? = null
     private var mask: Texture? = null
+    private var font: BitmapFont? = null
 
     override fun initData() {
-
+        font = BitmapFont()
     }
 
     override fun initUI() {

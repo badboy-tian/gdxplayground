@@ -3,15 +3,14 @@ package org.flixel
 import com.badlogic.gdx.Game
 import com.badlogic.gdx.Gdx
 import org.flixel.levelhelper.Utilities.LHUtils
-import org.flixel.screens.LHTest
-import org.flixel.screens.StencilMask
+import org.flixel.screens.*
 import org.flixel.stagebuilder.SBuilder
 
 class Flixel : Game() {
 
     override fun create() {
         //setScreen(new EarserTest());
-        //setScreen(new MaskTest());
+        //setScreen(MaskTest());
         //setScreen(MaskHairTest())
         //setScreen(MashTest01())
         //setScreen(MeshLine())

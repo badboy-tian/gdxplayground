@@ -99,10 +99,6 @@ public class MaskActor extends Image {
         program.setUniformi("u_mask", 2);
         program.end();
 
-        tex1.bind(1);
-        mask.bind(2);
-
-        Gdx.gl.glActiveTexture(GL20.GL_TEXTURE0);
 
         drawblePixmap = new DrawablePixmap(mask);
 
@@ -112,13 +108,18 @@ public class MaskActor extends Image {
     @Override
     public void draw(Batch batch, float parentAlpha) {
         super.draw(batch, parentAlpha);
-
         drawblePixmap.update();
+
+        tex1.bind(1);
+        mask.bind(2);
+
+        Gdx.gl.glActiveTexture(GL20.GL_TEXTURE0);
 
         ShaderProgram tmp = batch.getShader();
         batch.setShader(program);
         batch.draw(tex0, getX(), getY(), getWidth(), getHeight());
         batch.setShader(tmp);
+        batch.flush();
     }
 
     public void setClear(boolean isClear) {
