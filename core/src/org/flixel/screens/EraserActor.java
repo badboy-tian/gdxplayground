@@ -14,6 +14,7 @@ import com.badlogic.gdx.utils.Disposable;
 
 /**
  * Created by tian on 2016/10/10.
+ * 这个类是纯粹的擦除
  */
 
 public class EraserActor extends Image {

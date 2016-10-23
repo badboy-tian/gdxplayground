@@ -25,6 +25,7 @@ public class StencilMask extends BaseScreen {
         getStage().addActor(maskActor);
         maskActor.debug();
         maskActor.setSize(maskActor.getWidth() * 1.5f, maskActor.getHeight() * 1.5f);
+
         //maskActor.fileMask();
         /*EraserActor eraserActor = new EraserActor(new Texture("monster_hufasu.png"), 1.5f);
         eraserActor.setPosition(200, 100);

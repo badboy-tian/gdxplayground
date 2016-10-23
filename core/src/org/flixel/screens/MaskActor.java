@@ -15,6 +15,7 @@ import com.badlogic.gdx.utils.Disposable;
 
 /**
  * Created by tian on 2016/10/10.
+ * 这个类的作用是 笔刷刷过的地方显示画面，然后擦除
  */
 
 
@@ -71,6 +72,8 @@ public class MaskActor extends Image {
     private boolean isClear = false;
     private float scale = 1;
 
+    private float brushSize = 50;
+
     public MaskActor(Texture hair, float scale) {
         this.scale = scale;
         this.tex1 = hair;
@@ -103,6 +106,10 @@ public class MaskActor extends Image {
         drawblePixmap = new DrawablePixmap(mask);
 
         initListener();
+    }
+
+    public void setBrushSize(float brushSize) {
+        this.brushSize = brushSize;
     }
 
     @Override
@@ -194,7 +201,7 @@ public class MaskActor extends Image {
     }
 
     private class DrawablePixmap implements Disposable {
-        private float brushSize = 50;
+
         private Color clearColor = new Color(0f, 0f, 0f, 0f);
         private Color drawColor = new Color(1f, 1f, 1f, 1f);
 
