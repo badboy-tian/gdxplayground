@@ -1,7 +1,15 @@
 package org.flixel.screens;
 
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
+
+import net.mwplay.nativefont.NativeFont;
+import net.mwplay.nativefont.NativeFontPaint;
+
+import org.flixel.view.MyScrollLabel;
+
+import static com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator.DEFAULT_CHARS;
 
 /**
  * Created by tian on 2016/10/10.
@@ -37,6 +45,15 @@ public class StencilMask extends BaseScreen {
         getStage().addActor(maskActor1);
         maskActor1.debug();
         maskActor1.setSize(maskActor1.getWidth() * 1.5f, maskActor1.getHeight() * 1.5f);
+
+        NativeFont font30 = new NativeFont(new NativeFontPaint(30));
+        font30.appendText(DEFAULT_CHARS);
+
+        MyScrollLabel myScrollLabel = new MyScrollLabel("asfdsdfasdfasdfd.....", font30);
+        myScrollLabel.setPosition(200, 200);
+        myScrollLabel.setColor(Color.BLACK);
+        myScrollLabel.setV(1.5f);
+        getStage().addActor(myScrollLabel);
     }
 
     @Override

@@ -94,6 +94,7 @@ project(":core") {
         compile 'com.googlecode.plist:dd-plist:1.16'
         compile "net.mwplay:cocos-libgdx-ui:0.1.1-SNAPSHOT"
         compile 'com.github.peakgames.libgdx-stagebuilder:stagebuilder:v3.17.2'
+        compile 'com.github.tianqiujie:nativefont:2.3.3'
     }
 }
 
