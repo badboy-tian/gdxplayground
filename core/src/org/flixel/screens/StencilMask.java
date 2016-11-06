@@ -1,15 +1,8 @@
 package org.flixel.screens;
 
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.scenes.scene2d.ui.Image;
 
-import net.mwplay.nativefont.NativeFont;
-import net.mwplay.nativefont.NativeFontPaint;
-
-import org.flixel.view.MyScrollLabel;
-
-import static com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator.DEFAULT_CHARS;
+import org.flixel.view.CircleMask;
 
 /**
  * Created by tian on 2016/10/10.
@@ -24,15 +17,19 @@ public class StencilMask extends BaseScreen {
 
     @Override
     public void initUI() {
-        Image image = new Image(new Texture("sprite.png"));
+        /*Image image = new Image(new Texture("sprite.png"));
         image.setPosition(100, 100);
-        getStage().addActor(image);
+        getStage().addActor(image);*/
 
-        MaskActor maskActor = new MaskActor(new Texture("line.png"), 1.5f);
+        CircleMask circleMask = new CircleMask(new Texture("grass.png"));
+        circleMask.setPosition(200, 200);
+        getStage().addActor(circleMask);
+
+        /*MaskActor maskActor = new MaskActor(new Texture("line.png"), 1.5f);
         maskActor.setPosition(200, 100);
         getStage().addActor(maskActor);
         maskActor.debug();
-        maskActor.setSize(maskActor.getWidth() * 1.5f, maskActor.getHeight() * 1.5f);
+        maskActor.setSize(maskActor.getWidth() * 1.5f, maskActor.getHeight() * 1.5f);*/
 
         //maskActor.fileMask();
         /*EraserActor eraserActor = new EraserActor(new Texture("monster_hufasu.png"), 1.5f);
@@ -40,7 +37,7 @@ public class StencilMask extends BaseScreen {
         getStage().addActor(eraserActor);
         eraserActor.setSize(eraserActor.getWidth() * 1.5f, eraserActor.getHeight() * 1.5f);*/
 
-        MaskActor maskActor1 = new MaskActor(new Texture("line.png"), 1.5f);
+        /*MaskActor maskActor1 = new MaskActor(new Texture("line.png"), 1.5f);
         maskActor1.setPosition(200, 400);
         getStage().addActor(maskActor1);
         maskActor1.debug();
@@ -53,7 +50,7 @@ public class StencilMask extends BaseScreen {
         myScrollLabel.setPosition(200, 200);
         myScrollLabel.setColor(Color.BLACK);
         myScrollLabel.setV(1.5f);
-        getStage().addActor(myScrollLabel);
+        getStage().addActor(myScrollLabel);*/
     }
 
     @Override
